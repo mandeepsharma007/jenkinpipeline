@@ -1,0 +1,8 @@
+piVersion: v1
+kind: Secret
+metadata:
+  name: heketi-secret
+  namespace: default
+data:
+  key: WW1zTFZ3L0RkOS9GYTg5ZXYvUTArdE5aQUg5N3dRL04zNGlDaGpHL2FvOD0= 
+type: kubernetes.io/glusterfs

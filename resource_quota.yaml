@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: storage-quota
+spec:
+  hard:
+    persistentvolumeclaims: "4" 
+    requests.storage: "2G"
+    app-storage.storageclass.storage.k8s.io/requests.storage: "2G"

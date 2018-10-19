@@ -1,0 +1,13 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: app-storage
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+provisioner: kubernetes.io/glusterfs
+parameters:
+  resturl: http://172.30.0.87:8080
+  restuser: "admin"
+  secretNamespace: "default"
+  secretName: "heketi-secret"
+reclaimPolicy: Delete

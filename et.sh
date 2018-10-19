@@ -1,0 +1,1 @@
+etcdctl --endpoint=https://mc.192.168.124.101.nip.io:2379 --key-file=/etc/origin/calico/calico.etcd-client.key --cert-file=/etc/origin/calico/calico.etcd-client.crt --ca-file=/etc/origin/calico/calico.etcd-ca.crt

@@ -1,0 +1,42 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: null
+  labels:
+    app: apachewebserver
+  name: apachewebserver
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: apachewebserver:latest
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      uri: https://github.com/learnbyseven/apachewebserver.git
+    type: Git
+  strategy:
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: rhel7:latest
+    type: Docker
+  successfulBuildsHistoryLimit: 5
+  triggers:
+  - github:
+      secret: S51F5dU_gnt19RQ1Z6rO
+    type: GitHub
+  - generic:
+      secret: NpyZ9EoEs7SBDi7jMVqJ
+    type: Generic
+  - type: ConfigChange
+  - imageChange:
+    type: ImageChange
+status:
+  lastVersion: 0
